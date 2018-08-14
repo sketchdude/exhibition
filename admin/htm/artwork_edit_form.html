@@ -1,0 +1,285 @@
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?> " enctype="multipart/form-data">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th colspan="2" bgcolor="#382ada" height="35">
+                            <span class="list_heading">Editing <?php echo $_SESSION['title'] ?>...</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td align="center" colspan="2" bgcolor="#0080ff" height="25">
+                            <p class="edit"><?php echo $num_post_message ?></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center" height="40" bgcolor="#eeeeee">
+                            <?php echo $pagination_row ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" bgcolor="#0080ff" height="30">
+                            <p align="center">Artwork info:</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Art Work ID: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $_SESSION['artwork_id'] ?>
+                            <input type="hidden" name="artwork_id" value="<?php echo $_SESSION['artwork_id'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Choose a gallery: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $gallery_select ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Current Thumbnail: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="radio" name="new_thumbnail" value="current" checked> <?php echo $_SESSION['current_thumbnail'] ?>
+                            <input type="hidden" name="thumbnail" value="<?php $_SESSION['current_thumbnail'] ?>">
+                            <?php echo $current_thumbnail ?><?php echo $_SESSION['thumbnail'] ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Delete Current Thumbnail: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="radio" name="new_thumbnail" value="delete">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Upload New Thumbnail: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="radio" name="new_thumbnail" value="upload">
+                            <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+                            <input type="file" name="thumbnail">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Artwork display: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $display_select ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Artist: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $artist_select ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Style: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $errors['style']['length'] ?>
+                            <input type="text" name="style" value="<?php echo $_SESSION['style'] ?>" size="45" maxlength="45">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Subject: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $errors['subject']['length'] ?>
+                            <input type="text" name="subject" value="<?php echo $_SESSION['subject'] ?>" size="45" maxlength="45">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Medium: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $errors['medium']['length'] ?>
+                            <input type="text" name="medium" value="<?php echo $_SESSION['medium'] ?>" size="35" maxlength="35">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Dimensions: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $errors['size']['length'] ?>
+                            <input type="text" name="size" value="<?php echo $_SESSION['size'] ?>" size="25" maxlength="25">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" bgcolor="#0080ff" height="30">
+                            <p align="center">E commerce info:</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Sale type: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $type_select ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Sale status: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $status_select ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Quantity: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="text" name="qty_instock" value="<?php echo $_SESSION['qty_instock'] ?>" size="8" maxlength="8">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Price: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="text" name="price" value="<?php echo $_SESSION['price'] ?>" size="19" maxlength="19">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Shipping: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="text" name="shipping" value="<?php echo $_SESSION['shipping'] ?>" size="19" maxlength="19">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Handling: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="text" name="handling" value="<?php echo $_SESSION['handling'] ?>" size="19" maxlength="19">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" bgcolor="#0080ff" height="30">
+                            <p align="center">Web Data:</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Web title: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $errors['title']['length'] ?>
+                            <input type="text" name="title" value="<?php echo $_SESSION['title'] ?>" size="55" maxlength="55">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="135">
+                            Description: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="135">
+                            <textarea rows="5" cols="55" name="description"><?php echo $_SESSION['description'] ?></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="135">
+                            Key Words: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="135">
+                            <textarea rows="5" cols="55" name="keywords"><?php echo $_SESSION['keywords'] ?></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Priority: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="text" name="priority" value="<?php echo $_SESSION['priority'] ?>" size="3" maxlength="3">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Enable Comments: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $comment_select ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            RSS Feed: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $rss_select ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" bgcolor="#0080ff" height="30">
+                            <p align="center">Other images:</p>
+                        </th>
+                    </tr>
+                    <?php echo $image_rows ?>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Upload another image: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+                            <input type="hidden" name="continue_image" value="upload">
+                            <input type="file" name="artimage">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Caption: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="text" name="caption" size="55" maxlength="255">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" bgcolor="#0080ff" height="30">
+                            <p align="center">Click "Save" to edit this artwork.</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center" height="40">
+                            <?php echo $pagination_row ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td align="center" valign="middle" width="50%" height="75">
+                                        <p id="border"><input type="submit" id="editinput" name="gallery_edit" value="Save"></p>
+                                    </td>
+                                    <td align="center" valign="middle" width="50%" height="75">
+                                        <p id="border"><input type="submit" id="deleteinput" name="quit" value="Quit"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" valign="middle" width="50%" height="25">
+                                        Save Changes
+                                    </td>
+                                    <td align="center" valign="middle" width="50%" height="25">
+                                        Cancel
+                                    </td>
+                                </tr>
+                            </table>
+                            <input type="hidden" name="task" value="Save">
+                        </td>
+                    </tr>
+                </table>
+            </form>

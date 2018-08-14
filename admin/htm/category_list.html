@@ -1,0 +1,58 @@
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?> " enctype="multipart/form-data"><?php echo "\n" ?>
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#dddddd">
+                    <tr>
+                        <td colspan="6" align="center" valign="middle" height="35" bgcolor="#777bb4">
+                            <span class="list_heading">Listing Categories...</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" align="center" height="20">
+                            <p>Click on a heading to sort results</p>
+                        </td>
+                    </tr>
+                </table>
+                <table width="100%" border="0" cellpadding="0" cellspacing="2" bgcolor="#555555">
+                    <tr>
+                        <th bgcolor="#fefefe" height="30" width="30">
+                            <img src="img/check.jpg" alt="Check Boxes" width="25" height="25" title="Check Boxes" border="0">
+                        </th>
+                        <th bgcolor="#fefefe">
+                            <?php echo $category_id_th ?>
+                        </th>
+                        <th bgcolor="#fefefe">
+                            <?php echo $cat_name_th ?>
+                        </th>
+                        <th bgcolor="#fefefe">
+                            <?php echo $cat_type_th ?>
+                        </th>
+                        <th bgcolor="#fefefe">
+                            <?php echo $priority_th ?>
+                        </th>
+                        <th bgcolor="#fefefe">
+                            <?php echo $display_th ?>
+                        </th>
+                        <th bgcolor="#fefefe">
+                            <?php echo $sidebar_th ?>
+                        </th>
+                    </tr>
+<?php echo $data_rows ?>
+              <tr>
+                        <td colspan="7" align="center" bgcolor="#dddddd" height="25">
+                            <div id="pagination"><p><?php echo $pagination_row ?></p></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="7" align="right" height="25" class="select_display" bgcolor="#dddddd">
+                            <a href="<?php echo $_SERVER['PHP_SELF'] ?>?sort=<?php echo $paginate_str ?>&amp;page=<?php echo $page ?>&amp;action=selectall">Select All</a> | <a href="<?php echo $_SERVER['PHP_SELF'] ?>?sort=<?php echo $paginate_str ?>&amp;page=<?php echo $page ?>&amp;action=unselectall">Unselect All</a> | <a href="<?php echo $_SERVER['PHP_SELF'] ?>?sort=<?php echo $paginate_str ?>&amp;page=<?php echo $page ?>&amp;action=<?php echo $active_action ?>&amp;displayall=all">Display All</a> | <a href="<?php echo $_SERVER['PHP_SELF'] ?>?sort=<?php echo $paginate_str ?>&amp;page=<?php echo $page ?>&amp;action=<?php echo $active_action ?>&amp;displayall=normal">Display Normal</a>
+                        </td>
+                    </tr>
+                </table>
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#ececec">
+                    <tr>
+                        <td colspan="6" align="center">
+                            <?php include_once('button_select' . $admin_tplext) ?>
+                            <input type="hidden" name="orderby" value="<?php echo $orderby ?>">
+                        </td>
+                    </tr>
+                </table>
+            </form>

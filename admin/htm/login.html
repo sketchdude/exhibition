@@ -1,0 +1,62 @@
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?> ">
+                <table width="100%" border="0" cellpadding="3" cellspacing="3">
+                    <tr>
+                        <td colspan="2">
+                            <span class="gen"><?php echo $text ?></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="login" border="0" align="center" cellpadding="6" cellspacing="2" bgcolor="#fefefe">
+                                <tr>
+                                    <th colspan="2" bgcolor="#0080ff" class="list_heading">
+                                        <?php echo $page_title ?>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="center">
+                                        Please enter a username and password.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">
+                                        Username:
+                                    </td>
+                                    <td>
+                                        <input type="text" name="username" size="16" maxlength="25">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">
+                                        Password:
+                                    </td>
+                                    <td>
+                                        <input type="password" name="password" size="16" maxlength="16">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="center">
+                                        <p id="border"><input id="viewinput" type="submit" name="login" value="Login"></a>
+                                        <input type="hidden" name="action" value="login">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br><br>
+                        </td>
+                    </tr><?php echo "\n" ?>
+                </table>
+            </form>

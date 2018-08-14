@@ -1,0 +1,76 @@
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?> " enctype="multipart/form-data">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#dddddd">
+    <tr>
+        <th colspan="2" align="center" valign="middle" height="35" bgcolor="#777bb4">
+            <span class="list_heading">Message Detail</span>
+        </th>
+    </tr>
+    <tr>
+        <td colspan="2" align="center" height="30">
+            <p><b><?php echo $title ?></b></p>
+        </td>
+    </tr>
+    <tr>
+        <td width="100%" colspan="2" align="center">
+            <?php echo $details ?>
+        </td>
+    </tr>
+    <tr>
+        <th colspan="2" align="center" valign="middle" height="35" bgcolor="#777bb4">
+            <span class="list_heading">Reply</span>
+        </th>
+    </tr>
+    <tr>
+        <td align="right" width="30%" height="40">
+            Title: &nbsp;
+        </td>
+        <td height="40" width="70%">
+            <input type="text" id="title" name="title" value="RE: <?php echo $title ?>" size="55" maxlength="55">
+        </td>
+    </tr>
+    <tr>
+        <td align="right" height="160">
+            Reply: &nbsp;
+        </td>
+        <td height="160">
+            <textarea rows="7" cols="45" id="message" name="message"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td align="right" height="40">
+            From: &nbsp;
+        </td>
+        <td height="40">
+            <?php echo $signature_select ?>
+            <input type="hidden" name="comment_parent" value="<?php echo $_SESSION['comment_parent'] ?>">
+            <input type="hidden" name="parent_type" value="<?php echo $parent_type ?>">
+            <input type="hidden" name="comment_id" value="<?php echo $comment_id ?>">
+            <input type="hidden" name="delete_request" value="request">
+        </td>
+    </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td align="center" width="33%" height="75" valign="bottom">
+            <p id="border"><input type="submit" id="addinput" name="reply" value="Reply"></p>
+        </td>
+        <td align="center" width="33%" height="75" valign="bottom">
+            <p id="border"><input type="submit" id="editinput" name="quit" value="Quit"></p>
+        </td>
+        <td align="center" width="33%" height="75" valign="bottom">
+            <p id="border"><input type="submit" id="deleteinput" name="delete" value="Delete"></p>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" width="33%" height="25">
+            Reply to this message
+        </td>
+        <td align="center" width="33%" height="25">
+            Return to messages
+        </td>
+        <td align="center" width="33%" height="25">
+            Delete this message
+        </td>
+    </tr>
+</table>
+</form>

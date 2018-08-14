@@ -1,0 +1,153 @@
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?> " enctype="multipart/form-data">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th colspan="2" bgcolor="#c89b00" height="35">
+                            <span class="list_heading"><?php echo $info ?></span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="2" bgcolor="#ffcc00" height="30">
+                            <p align="center">Gallery info:</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Gallery name: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="text" name="gallery_name" size="25" maxlength="75"> "Name" will appear as a text link to the new gallery.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Upload gallery icon: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="radio" name="new_gallery_icon" value="upload">
+                            <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+                            <input type="file" name="gallery_icon">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            No gallery icon: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="radio" name="new_gallery_icon" value="none" checked>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Gallery display: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $display_select ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Total art works per page: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="text" name="art_per_page" value="6" size="2" maxlength="2">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Total art works per row: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="text" name="art_per_row" value="3" size="2" maxlength="2">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Thumbnail maximum pixels: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="text" name="thumbnail_max" value="175" size="3" maxlength="3">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Select a Category: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $gallery_cat_selectbox ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" bgcolor="#ffcc00" height="30">
+                            <p align="center">Web Data:</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Web title: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="text" name="title" size="55" maxlength="55">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="135">
+                            Description: (No HTML) &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="135">
+                            <textarea rows="5" cols="55" name="description"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="135">
+                            Key words: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="135">
+                            <textarea rows="5" cols="55" name="keywords"></textarea>
+                            <input type="hidden" name="add" value="Add">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Priority Number: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="text" name="priority" value="0" size="5" maxlength="5">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Make this gallery an RSS channel: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $rss_channel_selectbox ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" bgcolor="#ffcc00" height="30">
+                            <p align="center">Click "Save" to add this gallery.</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="2" bgcolor="#ececec">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td align="center" valign="middle" width="50%" height="75">
+                                        <p id="border"><input type="submit" id="addinput" name="task" value="Save"></p>
+                                    </td>
+                                    <td align="center" valign="middle" width="50%" height="75">
+                                        <p id="border"><input type="submit" id="deleteinput" name="quit" value="Quit"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" valign="middle" width="50%" height="25">
+                                        Add Gallery
+                                    </td>
+                                    <td align="center" valign="middle" width="50%" height="25">
+                                        Cancel
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </form>

@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex">
+<title><?php echo $page_title ?></title>
+<link rel="stylesheet" type="text/css" href="htm/artgalleryadmin.css">
+</head>
+<body>
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?> ">
+<div id="container">
+    <div id="info">
+        <h3><?php echo $page_title ?></h3>
+        <p><?php echo $message ?> | <a href="<?php echo $_SERVER['PHP_SELF'] ?>?action=logout">Logout</a></p>
+    </div>
+    <div id="menu_bar">
+        <?php include_once('menu' . $admin_tplext) ?>
+    </div>
+    <div id="title">
+        <p><?php echo $message ?></p>
+    </div>
+    <div id="details">
+        <table class="data_rows" border="0" cellpadding="3" cellspacing="3">
+            <tr>
+                <th colspan="2" bgcolor="#cccccc">
+                    Delete this about page?
+                </th>
+            </tr>
+            <?php echo $details ?>
+        </table>
+    </div>
+    <div id="messages">
+        <p><?php echo $num_post_message ?></p>
+    </div>
+    <div id="paginate">
+        <p><?php echo $pagination_row ?></p>
+    </div>
+    <div id="action_bar">
+        <p><input type="submit" name="task" value="Confirm Delete">&nbsp;<input type="submit" name="quit" value="Quit"></p>
+        <input type="hidden" name="category_id" value="<?php echo $page ?>">
+    </div>
+</div>
+</form>
+</body>
+</html>

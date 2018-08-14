@@ -1,0 +1,70 @@
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#dddddd">
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?> " enctype="multipart/form-data"><?php echo "\n" ?>
+                <tr>
+                    <th colspan="2" align="center" valign="middle" height="35" bgcolor="#777bb4">
+                        <span class="list_heading">Site Configuration</span>
+                    </th>
+                </tr>
+                <tr>
+                    <th colspan="2" bgcolor="#a3a6d0" height="30">
+                        <p>Settings</p>
+                    </th>
+                </tr>
+                <tr>
+                    <td align="right" bgcolor="#eeeeee" height="40">
+                        Title:&nbsp;
+                    </td>
+                    <td class="field" bgcolor="#eeeeee" height="40">
+                        <?php if (isset($errors['title']['length'])) echo $errors['title']['length'] ?>
+                        <input type="text" name="title" size="55" maxlength="55" value="<?php echo $title ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" bgcolor="#eeeeee" height="135">
+                        Description:&nbsp;
+                    </td>
+                    <td class="field" bgcolor="#eeeeee" height="135">
+                        <?php if (isset($errors['description']['length'])) echo $errors['description']['length'] ?>
+                        <textarea rows="5" cols="55" name="description"><?php echo $description ?></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" bgcolor="#eeeeee" height="135">
+                        Key Words:&nbsp;
+                    </td>
+                    <td class="field" bgcolor="#eeeeee" height="135">
+                        <?php if (isset($errors['keywords']['length'])) echo $errors['keywords']['length'] ?>
+                        <textarea rows="5" cols="55" name="keywords"><?php echo $keywords ?></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="2" bgcolor="#a3a6d0" height="30">
+                        <p>Click "Save" to change settings.</p>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center" height="75">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td align="center" valign="middle" width="50%" height="75">
+                                        <p id="border"><input type="submit" id="addinput" name="save" value="Save"></p>
+                                    </td>
+                                    <td align="center" valign="middle" width="50%" height="75">
+                                        <p id="border"><input type="submit" id="deleteinput" name="quit" value="Quit"></p>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td align="center" valign="middle" width="50%" height="25">
+                                        Save changes
+                                    </td>
+                                    <td align="center" valign="middle" width="50%" height="25">
+                                        Cancel
+                                    </td>
+                                </tr>
+                            </table>
+
+                    </td>
+                </tr>
+            </form>
+            </table>

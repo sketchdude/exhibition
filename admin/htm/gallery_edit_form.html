@@ -1,0 +1,184 @@
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?> " enctype="multipart/form-data">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th colspan="2" bgcolor="#382ada" height="35">
+                            <span class="list_heading">Editing <?php echo $_SESSION['gallery_name'] ?>...</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td align="center" colspan="2" bgcolor="#0080ff" height="25">
+                            <p class="edit"><?php echo $num_post_message ?></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center" height="40" bgcolor="#eeeeee">
+                            <?php echo $pagination_row ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" bgcolor="#0080ff" height="30">
+                            <p align="center">Gallery info:</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td align="right"bgcolor="#eeeeee" height="40">
+                            Gallery Name: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php if (isset($errors['gallery_name'])) echo $errors['gallery_name']['length'] ?>
+                            <input type="text" name="gallery_name" value="<?php echo $_SESSION['gallery_name'] ?>" size="35" maxlength="75">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="85">
+                            Current Gallery Icon: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="85">
+                            <input type="radio" name="new_gallery_image" value="current" checked> <?php echo $gallery_icon ?> <?php echo $_SESSION['current_gallery_image'] ?>
+                            <input type="hidden" name="gallery_image" value="<?php if (isset($_SESSION['gallery_image']))  echo $_SESSION['gallery_image'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Delete Current Gallery Icon: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="radio" name="new_gallery_image" value="delete">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Upload Gallery Icon: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="radio" name="new_gallery_image" value="upload">
+                            <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+                            <input type="file" name="gallery_image">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Gallery display: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $display_select ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Total art works per page: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php if (isset($errors['art_per_page']['length'])) echo $errors['art_per_page']['length'] ?>
+                            <input type="text" name="art_per_page" value="<?php echo $_SESSION['art_per_page'] ?>" size="2" maxlength="2">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Total art works per row: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php if (isset($errors['art_per_row']['length'])) echo $errors['art_per_row']['length'] ?>
+                            <input type="text" name="art_per_row" value="<?php echo $_SESSION['art_per_row'] ?>" size="2" maxlength="2">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Thumbnail maximum pixels:&nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php if (isset($errors['thumbnail_max']['length'])) echo $errors['thumbnail_max']['length'] ?>
+                            <input type="text" name="thumbnail_max" value="<?php echo $_SESSION['thumbnail_max'] ?>" size="3" maxlength="3">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Category: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $gallery_cat_select ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" bgcolor="#0080ff" height="30">
+                            <p align="center">Web Data:</p>
+                        </th>
+                    </tr>
+                   <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Web title: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php if (isset($errors['title']['length'])) echo $errors['title']['length'] ?>
+                            <input type="text" name="title" value="<?php echo $_SESSION['title'] ?>" size="55" maxlength="55">
+                        </td>
+                    </tr>
+                     <tr>
+                        <td align="right" bgcolor="#eeeeee" height="135">
+                            Description: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="135">
+                            <?php if (isset($errors['description']['length'])) echo $errors['description']['length'] ?>
+                            <textarea rows="5" cols="55" name="description"><?php echo $_SESSION['description'] ?></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="135">
+                             Key Words: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="135">
+                            <?php if (isset($errors['keywords']['length'])) echo $errors['keywords']['length'] ?>
+                            <textarea rows="5" cols="55" name="keywords"><?php echo $_SESSION['keywords'] ?></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Priority: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="text" name="priority" value="<?php echo $_SESSION['priority'] ?>" size="3" maxlength="3">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Make this an RSS Channel: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $rss_select ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" bgcolor="#0080ff" height="30">
+                            <p align="center">Click "Save" to edit this gallery.</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center" height="40">
+                            <?php echo $pagination_row ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td align="center" valign="middle" width="50%" height="75">
+                                        <p id="border"><input type="submit" id="editinput" name="gallery_edit" value="Save"></p>
+                                    </td>
+                                    <td align="center" valign="middle" width="50%" height="75">
+                                        <p id="border"><input type="submit" id="deleteinput" name="quit" value="Quit"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" valign="middle" width="50%" height="25">
+                                        Save Changes
+                                    </td>
+                                    <td align="center" valign="middle" width="50%" height="25">
+                                        Cancel
+                                    </td>
+                                </tr>
+                            </table>
+                            <input type="hidden" name="task" value="Save">
+                        </td>
+                    </tr>
+                </table>
+            </form>

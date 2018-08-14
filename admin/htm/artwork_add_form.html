@@ -1,0 +1,221 @@
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?> " enctype="multipart/form-data">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th colspan="2" bgcolor="#c89b00" height="35">
+                            <span class="list_heading"><?php echo $info ?></span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="2" bgcolor="#ffcc00" height="30">
+                            <p align="center">Artwork info:</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Choose a gallery for new artwork: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $gallery_select ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Upload main image: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+                            <input type="hidden" name="new_thumbnail" value="upload">
+                            <input type="file" name="thumbnail">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Date completed: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $date_complete_select ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Artwork display: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $display_select ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Artist: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $artist_select ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Style: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="text" name="style" size="45" maxlength="45">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Subject: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="text" name="subject" size="45" maxlength="45">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Medium: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="text" name="medium" size="35" maxlength="35">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Dimensions: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="text" name="size" size="25" maxlength="25">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" bgcolor="#ffcc00" height="30">
+                            <p align="center">E commerce info:</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Sale type: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $type_select ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Sale status: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $status_select ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Quantity: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="text" name="qty_instock" value="1" size="8" maxlength="8">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Price: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="text" name="price" value="0.00" size="19" maxlength="19">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Shipping: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="text" name="shipping" value="0.00" size="19" maxlength="19">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Handling: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="text" name="handling" value="0.00" size="19" maxlength="19">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" bgcolor="#ffcc00" height="30">
+                            <p align="center">Web Data:</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Web Title: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="text" name="title" size="55" maxlength="55">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="135">
+                             Description: (No HTML) &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="135">
+                            <textarea rows="5" cols="55" name="description"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="135">
+                            Key Words: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="135">
+                            <textarea rows="5" cols="55" name="keywords"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Priority Number: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <input type="text" name="priority" value="0" size="5" maxlength="5">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Allow public comments: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $comment_select ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" bgcolor="#eeeeee" height="40">
+                            Enable RSS feed: &nbsp;
+                        </td>
+                        <td bgcolor="#eeeeee" height="40">
+                            <?php echo $rss_feed_selectbox ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" bgcolor="#ffcc00" height="30">
+                            <p align="center">Optionally, you can add more images in the next step:</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="2" bgcolor="#ececec">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td align="center" valign="middle" width="50%" height="75">
+                                        <p id="border"><input type="submit" id="addinput" name="task" value="Save"></p>
+                                    </td>
+                                    <td align="center" valign="middle" width="50%" height="75">
+                                        <p id="border"><input type="submit" id="deleteinput" name="quit" value="Quit"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" valign="middle" width="50%" height="25">
+                                        Add Artwork
+                                    </td>
+                                    <td align="center" valign="middle" width="50%" height="25">
+                                        Cancel
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </form>

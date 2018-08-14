@@ -1,0 +1,63 @@
+<table border="0" width="100%" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="sidebar" valign="top">
+<?php echo $show_cart_link ?>
+<?php echo $sidebar ?>
+<?php echo $galleries ?>
+<?php echo $rss_icon ?>
+        </td>
+        <td id="content" width="100%" valign="top">
+            <table border="0" width="100%" cellpadding="6" cellspacing="0">
+                <tr>
+                    <td colspan="2" height="25">
+                        <b>&nbsp;&nbsp;<?php echo $breadcrumb ?></b>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <?php echo $thumbnail ?>
+                    </td>
+                    <td align="center">
+                        <table border="0" width="100%" cellpadding="6" cellspacing="6">
+                        <form action="purchase.php" method="post">
+                            <tr>
+                                <td align="center">
+                                    <?php echo $box ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                    <?php echo $description ?>
+                                </td>
+                            </tr>
+                        </form>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <?php echo $extra_images ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" height="35" align="center">
+                        <?php echo $pagination ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" height="25">
+                        <b>&nbsp;&nbsp;<?php echo $breadcrumb ?></b>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" height="35" align="left">
+                        <?php echo $comment_display ?>
+                        <form action="artwork.php?content=artwork&id=<?php echo $artwork_id ?>" method="post">
+                        <?php echo $comment_form ?>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

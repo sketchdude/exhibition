@@ -1,0 +1,67 @@
+* {
+  display: block;
+  font-family: Verdana, Tahoma, Arial, sans-serif;
+}
+
+:root {
+  margin: 50px;
+}
+
+channel > title {
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+  color: #0c869c;
+}
+
+channel > title:after {
+  font-size: medium;
+  margin: 10px;
+  display: block;
+  padding: 20px;
+  content: "NOTE: You can subscribe to this RSS feed using a desk-top application like FeedReader, or you can use an online news aggregator such as Bloglines.";
+  background-color: #ff862f;
+  color: white;
+}
+
+item {
+  margin: 25px 0 15px 0;
+  display: block;
+  padding: 10px;
+  background-color: #ffffe1;
+  border-style: solid;
+  border-color: #212121;
+  border-width: 1px;
+}
+
+item > title {
+  font-size: medium;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+item > link {
+  font-size: small;
+}
+
+item > description {
+  font-size: small;
+}
+
+item > pubDate {
+  font-size: small;
+}
+
+channel > link,
+channel > image,
+channel > copyright, 
+channel > lastBuildDate, 
+channel > generator, 
+channel > docs,
+language,
+lastBuildDate,
+ttl,
+guid,
+category {
+  display: none;
+}
